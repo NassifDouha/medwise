@@ -1,0 +1,16 @@
+.head{
+
+    display: flex;
+    justify-content: space-around;
+
+}
+.logo{
+    display:flex;
+    justify-content: start;
+}
+.inputs{
+    display:flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 10px;
+}

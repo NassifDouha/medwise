@@ -1,37 +1,64 @@
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></head>
+<body>
+  <input type="checkbox" id="check" style="display: none;">
+  <nav >
+      <div class="logo"><img src="assets\img.png" style="    padding-left: 35px;
+        max-width: 140px;
+        margin-left: 70px;
+        height: 53px;"></div>
+      <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">A propos</a></li>
+      </ul>
+      <label for="check">
+          <i class="fas fa-bars" id="btn"></i>
+          <i class="fas fa-times" id="cancel"></i>
+      </label>
+  </nav>
 <div id="login-page">
-    <div class="login">
-      <h2 class="login-title">Regitration</h2>
-      <form class="form-login">
-        <label for="email">E-mail</label>
-        <div class="input-email">
-          <i class="fas fa-envelope icon"></i>
-          <input type="email" name="email" placeholder="Entrer votre e-mail" required>
-        </div>
-        <label for="password">Mot de passe</label>
-        <div class="input-password">
-          <i class="fas fa-lock icon"></i>
-          <input type="password" name="password" placeholder="Entrer votre mot de passe" required>
-        </div>
-        <div class="checkbox">
-          <label for="remember">
-            <input type="checkbox" name="remember">
-            Remember me
-          </label>
-        </div>
-        <button type="submit"><i class="fas fa-door-open"></i> Registration</button>
-      </form>
-      <div class="created">
-        <p>Created by <a href="https://codepen.io/kelvinqueiroz/">Medwise groupe</a></p>
+  <div class="login" style="    padding-top: 30px;">
+    <h2 class="login-title">Registration</h2>
+  <div class="login-title" style="margin: 0 0 25px;">Welcome to Your Wise Health Partner</div>
+    <form  #f="ngForm" class="form-login" style="    margin-top: -20px;">
+      <label for="email">E-mail</label>
+      <div class="input-email">
+        <i class="fas fa-envelope icon"></i>
+        <input type="email" ngModel name="email" #name="ngModel" placeholder="Entrer votre e-mail" required>
       </div>
+      <div class="input-email" style="    background: #fff;     margin: -13px;padding-left: 29px;">     
+         <div class="alert alert-danger"  *ngIf = "name.invalid && name.touched" style="    padding: 4px;width: 258px;"> Email est obligatoire</div>
     </div>
-    <div class="background">
-      <h1></h1>
+      <label for="password">Mot de passe</label>
+      <div class="input-password">
+        <i class="fas fa-lock icon"></i>
+        <input type="password" ngModel #pass="ngModel" name="password" placeholder="Entrer votre mot de passe" required>
+      </div>
+      <div class="input-password" style="    background: #fff;     margin: -13px;padding-left: 29px;">     
+        <div class="alert alert-danger"  *ngIf = "pass.invalid && pass.touched" style="    padding: 4px;width: 258px;">mot de passe est obligatoire </div>
+   </div>
+      <label for="password">Confirmer le mot de passe</label>
+      <div class="input-password">
+        <i class="fas fa-lock icon"></i>
+        <input type="password" ngModel name="passwordC" #passc="ngModel" placeholder="re-entrer votre mot de passe" required>
+      </div>
+      <div class="input-password" style="    background: #fff;     margin: -13px;padding-left: 29px;">     
+        <div class="alert alert-danger"  *ngIf = "pass.value !== passc.value && pass.touched" style="padding: 4px;width: 258px;">mot de passe et sa confirmation different </div>
+   </div>
+      <button  [disabled] = "f.invalid || pass.value !== passc.value" type="submit"><i class="fas fa-door-open"></i> Registration</button>
+    </form>
+      <a href="#">Mot de passe perdu?</a>
+    <div class="created">
+      <p>Created by <a href="">Medwise groupe</a></p>
     </div>
   </div>
-  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-  <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-  <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-  <!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-  <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <div class="background">
+    <h1></h1>
+  </div>
+</div>
+</body>
+
+  
+  
+  <router-outlet />
+  

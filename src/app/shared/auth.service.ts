@@ -1,16 +1,16 @@
 import { Router} from '@angular/router';
-import { Inject, Injectable } from '@angular/core';
-import { AngularFireAuth} from '@angular/fire/compat/auth'
+import { Inject, Injectable, inject } from '@angular/core';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from '@angular/fire/auth'
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  constructor(private fireauth : AngularFireAuth, @Inject(Router) private router : Router) { }
+ private auth : Auth = inject(Auth);
+  constructor( @Inject(Router) private router : Router) { }
 
   //login method
    login(email : string, password : string){
-    this.fireauth.signInWithEmailAndPassword(email,password).then( () => {
+    signInWithEmailAndPassword(this.auth,email,password).then( () => {
         localStorage.setItem('token','true');
         this.router.navigate(['dashboard'])
     }, err => {
@@ -24,7 +24,7 @@ export class AuthService {
     // register method
 
     register(email : string,password : string) {
-      this.fireauth.createUserWithEmailAndPassword(email,password).then( () => {
+      createUserWithEmailAndPassword(this.auth,email,password).then( () => {
         alert('Registration Successful')
         this.router.navigate(['/login']);
       },err => {
@@ -37,7 +37,7 @@ export class AuthService {
 
     logout()
     {
-      this.fireauth.signOut().then( () => {
+     signOut(this.auth).then( () => {
         localStorage.removeItem('token');
         this.router.navigate(['/login']);
       }, err => {

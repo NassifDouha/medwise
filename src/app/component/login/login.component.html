@@ -1,34 +1,47 @@
-<div class="container~fluid">
-    <div class="row mt-5">
-        <div class="col"></div>
-        <div class="col-4"></div>
-          <div class="card shadow"></div>
-            <div class="card-body"></div>
-            <form>
-                <div class="mb-3"></div>
-                <h4 class ="text-dark text-muted">Login</h4>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" name="email" [(ngModel)]="email">
-                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" name="password" [(ngModel)]="password">
-                </div>
-                
-                <button type="button" class="btn btn-info" (click)="login()">Login</button>
-                <div class="col-md-6">
-                    <a href="" class="text-dark"  style="text-decoration: none;">Need Account ?</a>
-                </div>
-                <div class="col-md-6">
-                    <a href="" class="text-dark" style="text-decoration: none;">Forget Password ?</a>
 
-                </div>
-              </form>
-        <div class="col"></div>
+<body>
+  <input type="checkbox" id="check" style="display: none;">
+  <nav >
+      <div class="logo"><img src="assets\img.png" style="    padding-left: 35px;
+        max-width: 140px;
+        margin-left: 70px;
+        height: 53px;"></div>
+      <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">A propos</a></li>
+      </ul>
+      <label for="check">
+          <i class="fas fa-bars" id="btn"></i>
+          <i class="fas fa-times" id="cancel"></i>
+      </label>
+  </nav>
+<div id="login-page">
+  <div class="login">
+    <h2 class="login-title">Connexion</h2>
+  <div class="login-title" style="margin: 0 0 25px;">Welcome to Your Wise Health Partner</div>
+    <form class="form-login">
+      <label for="email">E-mail</label>
+      <div class="input-email">
+        <i class="fas fa-envelope icon"></i>
+        <input type="email" name="email"  [(ngModel)] = "email" placeholder="Entrer votre e-mail" required>
+      </div>
+      <label for="password">Mot de passe</label>
+      <div class="input-password">
+        <i class="fas fa-lock icon"></i>
+        <input type="password" name="password" [(ngModel)] = "password" placeholder="Entrer votre mot de passe" required>
+      </div>
+    
+      <button type="submit" (click)="login()"><i class="fas fa-door-open"></i> Connexion</button>
+    </form>
+      <a href="#">Mot de passe perdu?</a>
+    <div class="created">
+      <p>Created by <a href="https://codepen.io/kelvinqueiroz/">Medwise groupe</a></p>
     </div>
-
+  </div>
+  <div class="background">
+    <h1></h1>
+  </div>
 </div>
-
-
+</body>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>

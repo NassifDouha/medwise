@@ -1,33 +1,62 @@
-<div class="container~fluid">
-    <div class="row mt-5">
-        <div class="col"></div>
-        <div class="col-4">
-          <div class="card shadow">
-            <div class="card-body">
-            <form>
-              <div class="mb-3">
-                <h4 class ="text-dark text-muted">Register</h4>
-              </div>
-              <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" name="email" [(ngModel)]="email">
-              </div>
-              <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" name="password" [(ngModel)]="password">
-                </div>
-                <button type="button" class="btn btn-info" (click)="register()">Register</button>
-                <div class="row">
-                    <div class="col-md-6">
-                        <a href="/login" class="text-dark"  style="text-decoration: none;">Have an account ?<span class="text-dznger">Login</span></a>
-                    </div>
-                </div>   
-            </form>
-            </div>
-          </div>
-        </div>
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></head>
+<body>
+  <input type="checkbox" id="check" style="display: none;">
+  <nav >
+      <div class="logo"><img src="assets\img.png" style="    padding-left: 35px;
+        max-width: 140px;
+        margin-left: 70px;
+        height: 53px;"></div>
+      <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">A propos</a></li>
+      </ul>
+      <label for="check">
+          <i class="fas fa-bars" id="btn"></i>
+          <i class="fas fa-times" id="cancel"></i>
+      </label>
+  </nav>
+<div id="login-page">
+  <div class="login" style="    padding-top: 30px;">
+    <h2 class="login-title">Registration</h2>
+  <div class="login-title" style="margin: 0 0 25px;">Welcome to Your Wise Health Partner</div>
+    <form  #f="ngForm" class="form-login" style="    margin-top: -20px;">
+      <label for="email">E-mail</label>
+      <div class="input-email">
+        <i class="fas fa-envelope icon"></i>
+        <input type="email" ngModel name="email" #name="ngModel" [(ngModel)] = "email" placeholder="Entrer votre e-mail" required>
+      </div>
+      <div class="input-email" style="    background: #fff;     margin: -13px;padding-left: 29px;">     
+         <div class="alert alert-danger"  *ngIf = "name.invalid && name.touched" style="    padding: 4px;width: 258px;"> Email est obligatoire</div>
     </div>
+      <label for="password">Mot de passe</label>
+      <div class="input-password">
+        <i class="fas fa-lock icon"></i>
+        <input type="password" ngModel #pass="ngModel" name="password" placeholder="Entrer votre mot de passe" required>
+      </div>
+      <div class="input-password" style="    background: #fff;     margin: -13px;padding-left: 29px;">     
+        <div class="alert alert-danger"  *ngIf = "pass.invalid && pass.touched" style="    padding: 4px;width: 258px;">mot de passe est obligatoire </div>
+   </div>
+      <label for="password">Confirmer le mot de passe</label>
+      <div class="input-password">
+        <i class="fas fa-lock icon"></i>
+        <input type="password" ngModel name="passwordC" #passc="ngModel" [(ngModel)] = "password" placeholder="re-entrer votre mot de passe" required>
+      </div>
+      <div class="input-password" style="    background: #fff;     margin: -13px;padding-left: 29px;">     
+        <div class="alert alert-danger"  *ngIf = "pass.value !== passc.value && pass.touched" style="padding: 4px;width: 258px;">mot de passe et sa confirmation different </div>
+   </div>
+      <button  [disabled] = "f.invalid || pass.value !== passc.value" type="submit" (click)="register()"><i class="fas fa-door-open"></i> Registration</button>
+    </form>
+      <a href="#">Mot de passe perdu?</a>
+    <div class="created">
+      <p>Created by <a href="">Medwise groupe</a></p>
+    </div>
+  </div>
+  <div class="background">
+    <h1></h1>
+  </div>
 </div>
+</body>
 
 
 

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "projet-medwise": {
+      "hosting": {
+        "medwise": [
+          "medwise"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "projet-medwise"
+  }
+}

@@ -1,0 +1,14 @@
+.vertical-radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal-container {
+    display: flex;
+    margin-left: 0%;
+    margin-top: 2%;
+  }
+  
+  .horizontal-container > div {
+    margin-right: 30px;
+  }

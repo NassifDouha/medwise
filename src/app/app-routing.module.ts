@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { user } from '@angular/fire/auth';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './component/login/login.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';

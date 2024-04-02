@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -8,6 +9,8 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { FormsModule } from '@angular/forms';
+import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
+import { VerifyEmailComponent } from './component/verify-email/verify-email.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NutritionComponent } from './component/nutrition/nutrition.component';
 import { MatRadioModule } from '@angular/material/radio';
@@ -17,16 +20,21 @@ import { GenerationPlanningComponent } from './component/nutrition/generation-pl
 import { ResultatPlanningComponent } from './component/nutrition/resultat-planning/resultat-planning.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    ForgetPasswordComponent,
+    VerifyEmailComponent,
     NutritionComponent,
     RecherchePlatsComponent,
     ResultatsPlatsComponent,
     GenerationPlanningComponent,
-    ResultatPlanningComponent
+    ResultatPlanningComponent,
+    ForgetPasswordComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +45,6 @@ import { ResultatPlanningComponent } from './component/nutrition/resultat-planni
     provideFirestore(() => getFirestore()),
     FormsModule,
     HttpClientModule,
-    
   ],
   
   bootstrap: [AppComponent]

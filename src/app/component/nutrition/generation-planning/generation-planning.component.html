@@ -1,0 +1,31 @@
+<p>Veuillez indiquez le nombre de calories journaliers visé, et un planning de repas sain avec petit déjeuné, déjeuné et soupé se générera automatiquement.</p>
+
+<form (ngSubmit)="generateMealPlan()">
+    <div class="horizontal-container">
+    <div>
+      <p>Nombre de calories Journalier :</p>
+      <input type="number" [(ngModel)]="targetCalories" name="query">
+    </div>
+    <div>
+        <p>Exclure Incrédients :</p>
+        <input type="text" [(ngModel)]="exclude" name="exclude">
+    </div>
+    <div>
+      <p>Durée :</p>
+      <mat-radio-group [(ngModel)]="timeFrame" name="timeFrame" class="vertical-radio-group">
+        <mat-radio-button id="day" value="day" checked>1 journée</mat-radio-button>
+        <mat-radio-button id="week" value="week">1 semaine</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <p>Régime :</p>
+      <mat-radio-group [(ngModel)]="diet" name="diet" class="vertical-radio-group">
+        <mat-radio-button id="gluten-free" value="Gluten Free">Sans Gluten</mat-radio-button>
+        <mat-radio-button id="vegetarian" value="Vegetarian">Végétarien</mat-radio-button>
+        <mat-radio-button id="vegan" value="Vegan">Végan</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    </div>
+    <button type="submit">Soumettre</button>
+  </form>
+  

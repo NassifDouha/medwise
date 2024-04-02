@@ -1,0 +1,6 @@
+<div *ngIf="recipes && recipes.results">
+    <div *ngFor="let recipe of recipes.results">
+      <h3>{{ recipe.title }}</h3>
+      <!-- Affichez d'autres détails ici -->
+    </div>
+  </div>

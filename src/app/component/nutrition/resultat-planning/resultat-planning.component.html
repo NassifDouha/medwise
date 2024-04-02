@@ -1,0 +1,42 @@
+<div *ngIf="planning">
+    <div *ngIf="planning.meals && planning.meals.length > 0">
+      <h2>Repas</h2>
+      <div *ngFor="let meal of planning.meals">
+        <div>
+          <p>{{ meal.title }}</p>
+        </div>
+      </div>
+    </div>
+    
+    <div *ngIf="planning.nutrients">
+      <h2>Nutriments</h2>
+      <p>Calories: {{ planning.nutrients.calories }}</p>
+      <p>Protéines: {{ planning.nutrients.protein }}</p>
+      <p>Lipides: {{ planning.nutrients.fat }}</p>
+      <p>Glucides: {{ planning.nutrients.carbohydrates }}</p>
+    </div>
+</div>
+
+<div *ngIf="planning && planning.week">
+  <div *ngFor="let day of ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']">
+      <div *ngIf="planning.week[day]">
+        <h2>{{ capitalizeFirstLetter(day) }}</h2>
+        <div *ngIf="planning.week[day].meals && planning.week[day].meals.length > 0">
+          <h3>Repas</h3>
+          <div *ngFor="let meal of planning.week[day].meals">
+            <div>
+              <p>{{ meal.title }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div *ngIf="planning.week[day].nutrients">
+          <h3>Nutriments</h3>
+          <p>Calories: {{ planning.week[day].nutrients.calories }}</p>
+          <p>Protéines: {{ planning.week[day].nutrients.protein }}</p>
+          <p>Lipides: {{ planning.week[day].nutrients.fat }}</p>
+          <p>Glucides: {{ planning.week[day].nutrients.carbohydrates }}</p>
+        </div>
+      </div>
+    </div>
+  

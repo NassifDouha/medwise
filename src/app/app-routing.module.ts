@@ -7,6 +7,8 @@ import { NutritionComponent } from './component/nutrition/nutrition.component';
 import { AuthGuardService } from './shared/auth-guard.service';
 import { RecherchePlatsComponent } from './component/nutrition/recherche-plats/recherche-plats.component';
 import { ResultatsPlatsComponent } from './component/nutrition/resultats-plats/resultats-plats.component';
+import { GenerationPlanningComponent } from './component/nutrition/generation-planning/generation-planning.component';
+import { ResultatPlanningComponent } from './component/nutrition/resultat-planning/resultat-planning.component';
 
 
 const routes: Routes = [
@@ -16,7 +18,9 @@ const routes: Routes = [
   {path: 'register',component : RegisterComponent},
   {path: 'nutrition',component : NutritionComponent},
   {path: 'rechercheplats',component : RecherchePlatsComponent},
-  {path: 'resultatsplats',component : ResultatsPlatsComponent}
+  {path: 'resultatsplats',component : ResultatsPlatsComponent},
+  {path: 'generationplanning',component : GenerationPlanningComponent},
+  {path: 'resultatplanning',component : ResultatPlanningComponent}
 ];
 
 @NgModule({

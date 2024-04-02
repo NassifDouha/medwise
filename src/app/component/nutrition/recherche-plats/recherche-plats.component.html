@@ -44,6 +44,18 @@
         <mat-radio-button id="vegan" value="Vegan">Végan</mat-radio-button>
       </mat-radio-group>
     </div>
+    <div>
+      <p>Recherche :</p>
+      <input type="text" [(ngModel)]="query" name="query">
+    </div>
+    <div>
+      <p>Inclure Ingrédients :</p>
+      <input type="text" [(ngModel)]="includeIngredients" name="includeIngredients">
+    </div>
+    <div>
+      <p>Exclure Incrédients :</p>
+      <input type="text" [(ngModel)]="excludeIngredients" name="excludeIngredients">
+    </div>
     </div>
     <button type="submit">Soumettre</button>
   </form>

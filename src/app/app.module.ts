@@ -13,6 +13,8 @@ import { NutritionComponent } from './component/nutrition/nutrition.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { RecherchePlatsComponent } from './component/nutrition/recherche-plats/recherche-plats.component';
 import { ResultatsPlatsComponent } from './component/nutrition/resultats-plats/resultats-plats.component';
+import { GenerationPlanningComponent } from './component/nutrition/generation-planning/generation-planning.component';
+import { ResultatPlanningComponent } from './component/nutrition/resultat-planning/resultat-planning.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { ResultatsPlatsComponent } from './component/nutrition/resultats-plats/r
     RegisterComponent,
     NutritionComponent,
     RecherchePlatsComponent,
-    ResultatsPlatsComponent
+    ResultatsPlatsComponent,
+    GenerationPlanningComponent,
+    ResultatPlanningComponent
   ],
   imports: [
     BrowserModule,

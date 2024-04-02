@@ -14,13 +14,16 @@ export class RecherchePlatsComponent {
   diet: string = '';
   intolerances: string = '';
   type: string = '';
+  query: string = '';
+  includeIngredients: string = '';
+  excludeIngredients: string = '';
 
   constructor(private apiService: ApiService, private router: Router) {}
 
   searchRecipes() {
     
-    console.log('Paramètres envoyés :', this.sort, this.sortDirection, this.diet, this.intolerances, this.type);
-  this.apiService.searchSimpleRecipe(this.sort, this.sortDirection, this.diet, this.intolerances, this.type)
+    console.log('Paramètres envoyés :', this.sort, this.sortDirection, this.diet, this.intolerances, this.type, this.query, this.includeIngredients, this.excludeIngredients);
+  this.apiService.searchSimpleRecipe(this.sort, this.sortDirection, this.diet, this.intolerances, this.type, this.query, this.includeIngredients, this.excludeIngredients)
     .subscribe((data) => {
       console.log('Réponse de l\'API :', data);
       this.router.navigate(['/resultatsplats'], { state: { recipes: data } });

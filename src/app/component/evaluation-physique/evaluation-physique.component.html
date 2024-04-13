@@ -1,0 +1,97 @@
+<body>
+    <input type="checkbox" id="check" style="display: none" />
+    <app-navbar [showButtons]="false"></app-navbar>
+    <div class="container">
+      <div class="form-container">
+        <h2 style="text-align: center">Evaluation Physique</h2>
+        <form [formGroup]="evaluationphysiqueForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select class="form-control" formControlName="gender" id="gender">
+              <option value="">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="age"
+              id="age"
+            />
+          </div>
+          <div class="form-group">
+            <label for="weight">Weight:</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="weight"
+              id="weight"
+            />
+          </div>
+          <div class="form-group">
+            <label for="height">Height:</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="height"
+              id="height"
+            />
+          </div>
+          <div class="form-group">
+            <label for="gender">Activity Level:</label>
+            <select class="form-control" formControlName="activity" id="gender">
+              <option value="">Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+          <div style="text-align: center">
+            <button type="submit" class="btn btn-primary">Calculate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+    <div *ngIf="apiResponse" class="api-response">
+      <div class="row rowData">
+        <div class="col-12" style="text-align: center">
+          <h2 style="display: inline-block; margin-right: 10px">Calorie:</h2>
+          <p style="display: inline-block; margin: 0">
+            {{ apiResponse.calorie }}
+          </p>
+        </div>
+        <div class="col-6" style="text-align: center">
+          <h4>Balanced:</h4>
+          <p>Protein: {{ apiResponse.balanced.protein | number : "1.1-2" }}</p>
+          <p>Fat: {{ apiResponse.balanced.fat | number : "1.1-2" }}</p>
+          <p>Carbs: {{ apiResponse.balanced.carbs | number : "1.1-2" }}</p>
+        </div>
+        <div class="col-6" style="text-align: center">
+          <h4>Low Fat:</h4>
+          <p>Protein: {{ apiResponse.lowfat.protein | number : "1.1-2" }}</p>
+          <p>Fat: {{ apiResponse.lowfat.fat | number : "1.1-2" }}</p>
+          <p>Carbs: {{ apiResponse.lowfat.carbs | number : "1.1-2" }}</p>
+        </div>
+        <div class="col-6" style="text-align: center">
+          <h4>Low Carbs:</h4>
+          <p>Protein: {{ apiResponse.lowcarbs.protein | number : "1.1-2" }}</p>
+          <p>Fat: {{ apiResponse.lowcarbs.fat | number : "1.1-2" }}</p>
+          <p>Carbs: {{ apiResponse.lowcarbs.carbs | number : "1.1-2" }}</p>
+        </div>
+        <div class="col-6" style="text-align: center">
+          <h4>High Protein:</h4>
+          <p>Protein: {{ apiResponse.highprotein.protein | number : "1.1-2" }}</p>
+          <p>Fat: {{ apiResponse.highprotein.fat | number : "1.1-2" }}</p>
+          <p>Carbs: {{ apiResponse.highprotein.carbs | number : "1.1-2" }}</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  

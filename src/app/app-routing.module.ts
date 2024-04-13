@@ -12,6 +12,7 @@ import { GenerationPlanningComponent } from './component/nutrition/generation-pl
 import { ResultatPlanningComponent } from './component/nutrition/resultat-planning/resultat-planning.component';
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
 import { VerifyEmailComponent } from './component/verify-email/verify-email.component';
+import { EvaluationPhysiqueComponent } from './component/evaluation-physique/evaluation-physique.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'resultatplanning',component : ResultatPlanningComponent},
   {path: 'forget-password',component : ForgetPasswordComponent},
   {path: 'verify-email',component : VerifyEmailComponent},
+  {path: 'evaluationphysique', component: EvaluationPhysiqueComponent}
 ];
 
 @NgModule({

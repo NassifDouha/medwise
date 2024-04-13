@@ -8,7 +8,7 @@ import { connectAuthEmulator, getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
 import { VerifyEmailComponent } from './component/verify-email/verify-email.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,6 +18,8 @@ import { RecherchePlatsComponent } from './component/nutrition/recherche-plats/r
 import { ResultatsPlatsComponent } from './component/nutrition/resultats-plats/resultats-plats.component';
 import { GenerationPlanningComponent } from './component/nutrition/generation-planning/generation-planning.component';
 import { ResultatPlanningComponent } from './component/nutrition/resultat-planning/resultat-planning.component';
+import { EvaluationPhysiqueComponent } from './component/evaluation-physique/evaluation-physique.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 
 
@@ -35,6 +37,8 @@ import { ResultatPlanningComponent } from './component/nutrition/resultat-planni
     ResultatPlanningComponent,
     ForgetPasswordComponent,
     VerifyEmailComponent,
+    EvaluationPhysiqueComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,7 @@ import { ResultatPlanningComponent } from './component/nutrition/resultat-planni
     provideFirestore(() => getFirestore()),
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   
   bootstrap: [AppComponent]

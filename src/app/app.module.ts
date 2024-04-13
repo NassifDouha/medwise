@@ -33,7 +33,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatInputModule, 
     MatSelectModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule ,
+    NoopAnimationsModule,
     provideFirebaseApp(() => initializeApp({"projectId":"projet-medwise","appId":"1:336115863686:web:595fdcd9a01759825f8107","storageBucket":"projet-medwise.appspot.com","apiKey":"AIzaSyAUHQ0ekXMwjln-o37LQL8Vl7oxM5VLL5I","authDomain":"projet-medwise.firebaseapp.com","messagingSenderId":"336115863686"})),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

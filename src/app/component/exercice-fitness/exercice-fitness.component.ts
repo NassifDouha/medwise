@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { Exercice, Muscle, Options } from '../../exercice_fitness_interfaces';
-
+import { Navbar2Component } from '../navbar2/navbar2.component';
 
 
 @Component({

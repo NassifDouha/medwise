@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './recherche-plats.component.html',
   styleUrl: './recherche-plats.component.css'
 })
+
 export class RecherchePlatsComponent {
   // Définissez les propriétés pour stocker les valeurs sélectionnées par l'utilisateur
   sort: string = 'healthiness';

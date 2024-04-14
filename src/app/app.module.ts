@@ -24,6 +24,7 @@ import { GenerationPlanningComponent } from './component/nutrition/generation-pl
 import { ResultatPlanningComponent } from './component/nutrition/resultat-planning/resultat-planning.component';
 import { EvaluationPhysiqueComponent } from './component/evaluation-physique/evaluation-physique.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { Navbar2Component } from './component/navbar2/navbar2.component';
 
 
 
@@ -43,6 +44,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     VerifyEmailComponent,
     EvaluationPhysiqueComponent,
     NavbarComponent,
+    Navbar2Component,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +56,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     BrowserAnimationsModule,
     NoopAnimationsModule,
     MatRadioModule,
+    
     provideFirebaseApp(() => initializeApp({"projectId":"projet-medwise","appId":"1:336115863686:web:595fdcd9a01759825f8107","storageBucket":"projet-medwise.appspot.com","apiKey":"AIzaSyAUHQ0ekXMwjln-o37LQL8Vl7oxM5VLL5I","authDomain":"projet-medwise.firebaseapp.com","messagingSenderId":"336115863686"})),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

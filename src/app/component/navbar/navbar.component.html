@@ -1,0 +1,18 @@
+<nav >
+    <div class="logo"><img src="assets\img.png" style="    padding-left: 35px;
+      max-width: 140px;
+      margin-left: 70px;
+      height: 53px;"></div>
+    <ul *ngIf="showButtons" class="options">
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">A propos</a></li>
+    </ul>
+    <ul *ngIf="!showButtons">
+        <li><a href="/login">Logout</a></li>
+    </ul>
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+</nav>

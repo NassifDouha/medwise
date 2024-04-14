@@ -1,6 +1,6 @@
 import { Router} from '@angular/router';
 import { Inject, Injectable, inject } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from '@angular/fire/auth'
+import { Auth, createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updatePassword } from '@angular/fire/auth'
 @Injectable({
   providedIn: 'root'
 })
@@ -46,5 +46,12 @@ export class AuthService {
       })
     }
 
-
+    // forgot password
+    forgotPassword(email: string) {
+      sendPasswordResetEmail(this.auth, email).then(() => {
+        this.router.navigate(['verify-email']);
+      }, err => {
+        alert(err.message);
+      })
+    }
 }

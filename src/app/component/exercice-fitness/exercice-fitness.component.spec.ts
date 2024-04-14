@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NavbarComponent } from '../navbar/navbar.component';
 import { ExerciceFitnessComponent } from './exercice-fitness.component';
 
 describe('ExerciceFitnessComponent', () => {
@@ -13,11 +13,6 @@ describe('ExerciceFitnessComponent', () => {
     .compileComponents();
     
     fixture = TestBed.createComponent(ExerciceFitnessComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });
+

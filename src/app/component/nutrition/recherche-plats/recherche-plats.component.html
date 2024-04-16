@@ -1,0 +1,86 @@
+<app-navbar [showButtons]="false"></app-navbar>
+<app-navbar2></app-navbar2>
+
+<form (ngSubmit)="searchRecipes()">
+  <div class="container">
+    <div class="form-container">
+      <h2 style="text-align: center">Recherche Plats</h2>
+    <div class="champ-text">
+        <p>Recherche :</p>
+        <input type="text" [(ngModel)]="query" name="query">
+        <p>Calories:</p>
+        <input class="entier" type="number" [(ngModel)]="minCalories" name="minCalories" placeholder="Min" min="0" max="9999">
+        <input class="entier" type="number" [(ngModel)]="maxCalories" name="maxCalories" placeholder="Max" min="0" max="9999">
+        <p>Protéines:</p>
+        <input class="entier" type="number" [(ngModel)]="minProtein" name="minProtein" placeholder="Min" min="0" max="9999">
+        <input class="entier" type="number" [(ngModel)]="maxProtein" name="maxProtein" placeholder="Max" min="0" max="9999">
+    </div>
+    <div class="champ-text">
+      <p>Inclure Ingrédients :</p>
+      <input type="text" [(ngModel)]="includeIngredients" name="includeIngredients">
+      <p>Lipides:</p>
+      <input class="entier" type="number" [(ngModel)]="minFat" name="minFat" placeholder="Min" min="0" max="9999">
+      <input class="entier" type="number" [(ngModel)]="maxFat" name="maxFat" placeholder="Max" min="0" max="9999">
+      <p>Glucides:</p>
+      <input class="entier" type="number"  [(ngModel)]="minCarbs" name="minCarbs" placeholder="Min" min="0" max="9999">
+      <input class="entier" type="number"  [(ngModel)]="maxCarbs" name="maxCarbs" placeholder="Max" min="0" max="9999">
+  </div>
+    <div class="champ-text">
+        <p>Exclure Ingrédients :</p>
+        <input type="text" [(ngModel)]="excludeIngredients" name="excludeIngredients">
+        <p>Sucres:</p>
+        <input class="entier" type="number"  [(ngModel)]="minSugar" name="minSugar" placeholder="Min" min="0" max="9999">
+        <input class="entier" type="number"  [(ngModel)]="maxSugar" name="maxSugar" placeholder="Max" min="0" max="9999">
+        <p>Nombre Résultats:</p>
+        <input class="entier" type="number" [(ngModel)]="number" name="number" min="0" max="30">
+    </div>
+
+    <div>
+      <p>Trier par :</p>
+      <mat-radio-group [(ngModel)]="sort" name="sort" >
+        <mat-radio-button id="healthiness" value="healthiness">Health Score</mat-radio-button>
+        <mat-radio-button id="calories" value="calories">Calories</mat-radio-button>
+        <mat-radio-button id="protein" value="protein">Protéines</mat-radio-button>
+        <mat-radio-button id="carbs" value="carbs">Glucides</mat-radio-button>
+        <mat-radio-button id="total-fat" value="total-fat">Lipides</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <p>Tri :</p>
+      <mat-radio-group [(ngModel)]="sortDirection" name="order" >
+        <mat-radio-button id="asc" value="asc">Croissant</mat-radio-button>
+        <mat-radio-button id="desc" value="desc">Décroissant</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <p>Type de repas :</p>
+      <mat-radio-group [(ngModel)]="type" name="type" >
+        <mat-radio-button id="breakfast" value="breakfast">Petit-Déjeuné</mat-radio-button>
+        <mat-radio-button id="main-course" value="main course">Plat Principal</mat-radio-button>
+        <mat-radio-button id="side-dish" value="side dish">Plat d'Accompagnement</mat-radio-button>
+        <mat-radio-button id="dessert" value="dessert">Dessert</mat-radio-button>
+        <mat-radio-button id="soup" value="soup">Soupe</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <p>Intolérance :</p>
+      <mat-radio-group [(ngModel)]="intolerances" name="intolerances" >
+        <mat-radio-button id="dairy" value="Dairy">Lactose</mat-radio-button>
+        <mat-radio-button id="egg" value="Egg">Oeufs</mat-radio-button>
+        <mat-radio-button id="peanut" value="Peanut">Arachides</mat-radio-button>
+        <mat-radio-button id="seafood" value="Seafood">Fruit de mer</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <p>Régime :</p>
+      <mat-radio-group [(ngModel)]="diet" name="diet" >
+        <mat-radio-button id="gluten-free" value="Gluten Free">Sans Gluten</mat-radio-button>
+        <mat-radio-button id="vegetarian" value="Vegetarian">Végétarien</mat-radio-button>
+        <mat-radio-button id="vegan" value="Vegan">Végan</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <button type="submit" class="btn btn-primary">Soumettre</button>
+  </div>
+  </div>
+  </form>
+  

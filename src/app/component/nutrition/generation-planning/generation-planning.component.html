@@ -1,0 +1,34 @@
+<app-navbar [showButtons]="false"></app-navbar>
+<app-navbar2></app-navbar2>
+<div class="container">
+  <div class="form-container">
+    <h2 style="text-align: center">Generation Planning Repas</h2>
+<form (ngSubmit)="generateMealPlan()">
+    <div class="horizontal-container">
+    <div>
+      <p>Calories Journalier :</p>
+      <input type="number" [(ngModel)]="targetCalories" name="query" min="0" max="9999">
+    </div>
+    <div>
+        <p>Exclure Incrédients :</p>
+        <input type="text" [(ngModel)]="exclude" name="exclude">
+    </div>
+    <div>
+      <p>Durée :</p>
+      <mat-radio-group [(ngModel)]="timeFrame" name="timeFrame" class="vertical-radio-group">
+        <mat-radio-button id="day" value="day" checked>1 journée</mat-radio-button>
+        <mat-radio-button id="week" value="week">1 semaine</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <p>Régime :</p>
+      <mat-radio-group [(ngModel)]="diet" name="diet" class="vertical-radio-group">
+        <mat-radio-button id="gluten-free" value="Gluten Free">Sans Gluten</mat-radio-button>
+        <mat-radio-button id="vegetarian" value="Vegetarian">Végétarien</mat-radio-button>
+        <mat-radio-button id="vegan" value="Vegan">Végan</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Soumettre</button>
+  </form>
+  

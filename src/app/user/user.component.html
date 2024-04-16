@@ -1,0 +1,58 @@
+
+<body>
+  <input type="checkbox" id="check" style="display: none;">
+  <nav >
+      <div class="logo"><img src="assets\img.png" style="    padding-left: 35px;
+        max-width: 140px;
+        margin-left: 70px;
+        height: 53px;"></div>
+      <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">A propos</a></li>
+      </ul>
+      <label for="check">
+          <i class="fas fa-bars" id="btn"></i>
+          <i class="fas fa-times" id="cancel"></i>
+      </label>
+  </nav>
+<div id="login-page">
+  <div class="login">
+    <h2 class="login-title">Connexion</h2>
+  <div class="login-title" style="margin: 0 0 25px;">Welcome to Your Wise Health Partner</div>
+    <form class="form-login">
+      <label for="email">E-mail</label>
+      <div class="input-email">
+        <i class="fas fa-envelope icon"></i>
+        <input type="email" name="email" placeholder="Entrer votre e-mail" required>
+      </div>
+      <label for="password">Mot de passe</label>
+      <div class="input-password">
+        <i class="fas fa-lock icon"></i>
+        <input type="password" name="password" placeholder="Entrer votre mot de passe" required>
+      </div>
+    
+      <button type="submit"><i class="fas fa-door-open"></i> Connexion</button>
+    </form>
+      <a href="#">Mot de passe perdu?</a>
+    <div class="created">
+      <p>Created by <a href="https://codepen.io/kelvinqueiroz/">Medwise groupe</a></p>
+    </div>
+  </div>
+  <div class="background">
+    <h1></h1>
+  </div>
+</div>
+</body>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  
+  
+  <router-outlet />
+  

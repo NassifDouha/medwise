@@ -1,0 +1,14 @@
+<nav class="navbar">
+    <div class="logo">
+        <img src="assets\img.png" style=" padding-left: 35px;
+        max-width: 140px;
+        margin-left: 70px;
+        height: 53px;">
+    </div>
+</nav>
+
+<div *ngIf="sentiment" class="result-container">
+    <h1 class="title">Résultat de l'analyse de sentiment</h1>
+    <p class="sentiment-info">Sentiment détecté : {{ sentiment }}</p>
+    <p class="motivation-message">{{ motivationMessage }}</p>
+</div>

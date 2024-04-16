@@ -1,0 +1,18 @@
+.navbar {
+    background-color: #F7F7F7;
+}
+
+.result-container {
+        text-align: center;
+        margin-top: 140px;
+        padding: 15px;
+        border: 2px solid #6096BD;
+        margin-left: 400px;
+        margin-right: 132px;
+}
+
+.title, .sentiment-info, .motivation-message {
+    display: block; /* Pour que chaque élément soit sur une nouvelle ligne */
+    color: blue; /* Couleur du texte */
+    margin: 10px; /* Ajoute un peu d'espace autour de chaque élément */
+}

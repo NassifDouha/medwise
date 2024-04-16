@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
   styleUrl: './resultat-planning.component.css'
 })
 export class ResultatPlanningComponent implements OnInit {
-  planning: any  // Cette propriété va contenir les données des recettes
+  planning: any; // Cette propriété va contenir les données des recettes
+  recipeDetails: any[] | undefined; // Cette propriété va contenir les détails des recettes
 
   constructor(private router: Router) {}
 
@@ -15,8 +16,10 @@ export class ResultatPlanningComponent implements OnInit {
     const currentNavigation = this.router.getCurrentNavigation();
     if (currentNavigation && currentNavigation.extras && currentNavigation.extras.state) {
       this.planning = currentNavigation.extras.state['planning'];
+      this.recipeDetails = currentNavigation.extras.state['recipeDetails'] || [];
     } else {
       this.planning = history.state['planning'];
+      this.recipeDetails = history.state['recipeDetails'] || [];
     }
   }
   capitalizeFirstLetter(word: string): string {

@@ -1,15 +1,26 @@
+<app-navbar [showButtons]="false"></app-navbar>
+<app-navbar2></app-navbar2>
+<div class="container">
+  <div class="form-container">
+    <h2 style="text-align: center">Resultat Generation Planning</h2>
 <div *ngIf="planning">
     <div *ngIf="planning.meals && planning.meals.length > 0">
-      <h2>Repas</h2>
-      <div *ngFor="let meal of planning.meals">
-        <div>
-          <p>{{ meal.title }}</p>
-        </div>
+      <div *ngFor="let recipe of recipeDetails" class = "recipe-container">
+        <div class="recipe-details">
+          <a href="{{ recipe.sourceUrl }}" target="_blank"><h3>{{ recipe.title }}</h3></a>
+          </div>
+        <img [src]="recipe.image" alt="Image de la recette" class="recipe-image">
+        <div class="recipe-details">
+          <div *ngFor="let nutrient of recipe.nutrition.nutrients">
+            <div *ngIf="nutrient.name === 'Calories' || nutrient.name === 'Fat' || nutrient.name === 'Carbohydrates' || nutrient.name === 'Protein'">
+              <p>{{ nutrient.name }}: {{ nutrient.amount }} {{ nutrient.unit }}</p>
+            </div>
       </div>
+    </div>
     </div>
     
     <div *ngIf="planning.nutrients">
-      <h2>Nutriments</h2>
+      <h2>Total Nutriments du Jour</h2>
       <p>Calories: {{ planning.nutrients.calories }}</p>
       <p>Protéines: {{ planning.nutrients.protein }}</p>
       <p>Lipides: {{ planning.nutrients.fat }}</p>
@@ -18,14 +29,15 @@
 </div>
 
 <div *ngIf="planning && planning.week">
-  <div *ngFor="let day of ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']">
+  <div class="day-group">
+    <div *ngFor="let day of ['monday', 'tuesday', 'wednesday', 'thursday']">
       <div *ngIf="planning.week[day]">
         <h2>{{ capitalizeFirstLetter(day) }}</h2>
         <div *ngIf="planning.week[day].meals && planning.week[day].meals.length > 0">
           <h3>Repas</h3>
-          <div *ngFor="let meal of planning.week[day].meals">
+          <div *ngFor="let recipe of planning.week[day].meals">
             <div>
-              <p>{{ meal.title }}</p>
+              <a href="{{ recipe.sourceUrl }}" target="_blank"><h3>{{ recipe.title }}</h3></a>
             </div>
           </div>
         </div>
@@ -39,4 +51,30 @@
         </div>
       </div>
     </div>
-  
+  </div>
+
+  <div class="day-group">
+    <div *ngFor="let day of ['friday', 'saturday', 'sunday']">
+      <div *ngIf="planning.week[day]">
+        <h2>{{ capitalizeFirstLetter(day) }}</h2>
+        <div *ngIf="planning.week[day].meals && planning.week[day].meals.length > 0">
+          <h3>Repas</h3>
+          <div *ngFor="let recipe of planning.week[day].meals">
+            <div>
+              <a href="{{ recipe.sourceUrl }}" target="_blank"><h3>{{ recipe.title }}</h3></a>
+            </div>
+          </div>
+        </div>
+        
+        <div *ngIf="planning.week[day].nutrients">
+          <h3>Nutriments</h3>
+          <p>Calories: {{ planning.week[day].nutrients.calories }}</p>
+          <p>Protéines: {{ planning.week[day].nutrients.protein }}</p>
+          <p>Lipides: {{ planning.week[day].nutrients.fat }}</p>
+          <p>Glucides: {{ planning.week[day].nutrients.carbohydrates }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

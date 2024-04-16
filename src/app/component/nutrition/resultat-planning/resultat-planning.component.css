@@ -1,0 +1,46 @@
+.container {
+  padding-top: 68px;
+  padding-left: 21%;
+  height: 10vh;
+}
+  
+ 
+.form-container {
+    width: 800px ;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff; /* Add a white background color for better contrast */
+    margin-bottom: 10px;
+}
+
+  .recipe-container {
+    display: flex;
+    align-items: center; /* Centre verticalement */
+    margin-bottom: 20px; /* Ajustez la marge inférieure selon vos besoins */
+  }
+  
+  .recipe-image {
+    width: 150px; /* ou la taille désirée */
+    height: auto; /* pour conserver les proportions */
+    margin-right: 80px; /* Espacement entre l'image et le titre */
+    margin-left: 80px; /* Espacement entre l'image et le titre */
+  }
+  
+  .recipe-details {
+    flex: 0.6; /* Le titre prendra tout l'espace restant */
+  }
+  
+  .recipe-details h3 {
+    margin: 0; /* Supprime les marges par défaut */
+    text-align: left; /* Alignement à gauche */
+  }
+
+  .day-group {
+    display: flex;
+  }
+  
+  .day-group > div {
+    flex: 1;
+    margin-right: 20px; /* Espacement entre les jours */
+  }

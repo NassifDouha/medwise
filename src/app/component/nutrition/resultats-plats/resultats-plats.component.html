@@ -1,6 +1,22 @@
-<div *ngIf="recipes && recipes.results">
-    <div *ngFor="let recipe of recipes.results">
-      <h3>{{ recipe.title }}</h3>
-      <!-- Affichez d'autres détails ici -->
+<app-navbar [showButtons]="false"></app-navbar>
+<app-navbar2></app-navbar2>
+<div class="container">
+  <div class="form-container">
+    <h2 style="text-align: center">Resultat Recherche Plats</h2>
+    <div *ngIf="recipes && recipes.results">
+      <div *ngFor="let recipe of recipes.results" class="recipe-container">
+        <div class="recipe-details">
+          <a href="{{ recipe.sourceUrl }}" target="_blank"><h3>{{ recipe.title }}</h3></a>
+          </div>
+        <img [src]="recipe.image" alt="Image de la recette" class="recipe-image">
+          <div class="recipe-details">
+          <div *ngFor="let nutrient of recipe.nutrition.nutrients">
+            <div *ngIf="nutrient.name === 'Calories' || nutrient.name === 'Fat' || nutrient.name === 'Carbohydrates' || nutrient.name === 'Protein'">
+              <p>{{ nutrient.name }}: {{ nutrient.amount }} {{ nutrient.unit }}</p>
+            </div>
+          <!-- Affichez d'autres détails ici -->
+        </div>
+      </div>
     </div>
   </div>
+</div>

@@ -9,7 +9,7 @@
         <li><a href="#">A propos</a></li>
     </ul>
     <ul *ngIf="!showButtons">
-        <li><a href="/login">Logout</a></li>
+        <li><a href="#" (click)="logout()">Logout</a></li>
     </ul>
     <label for="check">
         <i class="fas fa-bars" id="btn"></i>

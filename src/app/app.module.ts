@@ -20,7 +20,12 @@ import { GenerationPlanningComponent } from './component/nutrition/generation-pl
 import { ResultatPlanningComponent } from './component/nutrition/resultat-planning/resultat-planning.component';
 import { EvaluationPhysiqueComponent } from './component/evaluation-physique/evaluation-physique.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
-
+import { Navbar2Component } from './component/navbar2/navbar2.component';
+import { ExerciceFitnessComponent } from './component/exercice-fitness/exercice-fitness.component';
+import { BrowserAnimationsModule,NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -39,6 +44,8 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     VerifyEmailComponent,
     EvaluationPhysiqueComponent,
     NavbarComponent,
+    Navbar2Component,
+    ExerciceFitnessComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +56,13 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     provideFirestore(() => getFirestore()),
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule, 
+    MatInputModule, 
+    MatSelectModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    MatRadioModule,
   ],
   
   bootstrap: [AppComponent]

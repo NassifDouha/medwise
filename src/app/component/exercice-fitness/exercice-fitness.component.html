@@ -1,0 +1,55 @@
+
+
+  
+  <app-navbar></app-navbar>
+  <app-navbar2></app-navbar2>
+  <body>
+
+
+
+
+
+
+
+  <div class= "content-after-navbar2">
+  <h1>Exercices fitness</h1>
+
+  <h2>Veuillez remplir ce formulaire avant de commencer:</h2>
+  
+  
+  <p>Région du corps a entrainer:</p>
+  
+  
+  
+  <mat-form-field>
+      <mat-label>Muscle to train</mat-label>
+      <mat-select [(value)] = "selectedMuscle">
+        @for (muscle of MuscleOption; track muscle) {
+          <mat-option [value]="muscle"  >{{muscle.label}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  
+  
+    <p>Période d'entraînement souhaité:</p>
+  <mat-form-field appearance="fill" >
+  
+      <mat-label>Période</mat-label>
+      <mat-select name="myselect2">
+          <mat-option value="one">1 semaine</mat-option>
+          <mat-option value="two">2 semaine</mat-option>
+        
+      </mat-select>
+  </mat-form-field>
+  
+  
+  
+  <button (click) = "search()"> valider</button>
+  
+  
+  
+  <h2>Exercices:</h2>
+  <p> {{exercice.description}}</p>
+  </div>
+</body>
+

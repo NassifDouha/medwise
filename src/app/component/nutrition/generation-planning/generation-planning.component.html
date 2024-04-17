@@ -1,10 +1,13 @@
-<p>Veuillez indiquez le nombre de calories journaliers visé, et un planning de repas sain avec petit déjeuné, déjeuné et soupé se générera automatiquement.</p>
-
+<app-navbar [showButtons]="false"></app-navbar>
+<app-navbar2></app-navbar2>
+<div class="container">
+  <div class="form-container">
+    <h2 style="text-align: center">Generation Planning Repas</h2>
 <form (ngSubmit)="generateMealPlan()">
     <div class="horizontal-container">
     <div>
-      <p>Nombre de calories Journalier :</p>
-      <input type="number" [(ngModel)]="targetCalories" name="query">
+      <p>Calories Journalier :</p>
+      <input type="number" [(ngModel)]="targetCalories" name="query" min="0" max="9999">
     </div>
     <div>
         <p>Exclure Incrédients :</p>
@@ -26,6 +29,6 @@
       </mat-radio-group>
     </div>
     </div>
-    <button type="submit">Soumettre</button>
+    <button type="submit" class="btn btn-primary">Soumettre</button>
   </form>
   

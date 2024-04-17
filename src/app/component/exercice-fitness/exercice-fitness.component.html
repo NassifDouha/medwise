@@ -2,9 +2,10 @@
 
   
   <app-navbar></app-navbar>
+  <app-navbar2></app-navbar2>
   <body>
 
-  <app-navbar2></app-navbar2>
+
 
 
 
@@ -34,7 +35,7 @@
   <mat-form-field appearance="fill" >
   
       <mat-label>Période</mat-label>
-      <mat-select name="myselect2">
+      <mat-select name="myselect2" [(ngModel)]="selectedPeriod">
           <mat-option value="one">1 semaine</mat-option>
           <mat-option value="two">2 semaine</mat-option>
         
@@ -46,9 +47,14 @@
   <button (click) = "search()"> valider</button>
   
   
-  
-  <h2>Exercices:</h2>
-  <p> {{exercice.description}}</p>
+
+
+
+  <div *ngIf="isButtonClicked">
+    <h2>Voici une proposition d'exercice adapté à vos besoins :</h2>
+    <p>{{ phraseAffichee }}</p>
+    <p>{{ exercice.description }}</p>
   </div>
+</div>
 </body>
 

@@ -25,7 +25,8 @@ import { ResultatPlanningComponent } from './component/nutrition/resultat-planni
 import { EvaluationPhysiqueComponent } from './component/evaluation-physique/evaluation-physique.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { Navbar2Component } from './component/navbar2/navbar2.component';
-
+import { ChatComponent } from './component/evaluation-psychologique/chat/chat.component';
+import { ResultatComponent } from './component/evaluation-psychologique/resultat/resultat.component';
 
 
 @NgModule({
@@ -45,6 +46,9 @@ import { Navbar2Component } from './component/navbar2/navbar2.component';
     EvaluationPhysiqueComponent,
     NavbarComponent,
     Navbar2Component,
+    ExerciceFitnessComponent,
+    ChatComponent,
+    ResultatComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,13 @@ import { Navbar2Component } from './component/navbar2/navbar2.component';
     provideFirestore(() => getFirestore()),
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule, 
+    MatInputModule, 
+    MatSelectModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    MatRadioModule,
   ],
   
   bootstrap: [AppComponent]

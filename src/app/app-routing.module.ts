@@ -13,6 +13,8 @@ import { ResultatPlanningComponent } from './component/nutrition/resultat-planni
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
 import { VerifyEmailComponent } from './component/verify-email/verify-email.component';
 import { EvaluationPhysiqueComponent } from './component/evaluation-physique/evaluation-physique.component';
+import { ChatComponent } from './component/evaluation-psychologique/chat/chat.component';
+import { ResultatComponent } from './component/evaluation-psychologique/resultat/resultat.component';
 
 
 const routes: Routes = [
@@ -20,15 +22,18 @@ const routes: Routes = [
   {path: 'login',component : LoginComponent},
   {path: 'dashboard',component : DashboardComponent, canActivate: [AuthGuardService] },
   {path: 'register',component : RegisterComponent},
-  {path: 'exercice',component : ExerciceFitnessComponent},
-  {path: 'nutrition',component : NutritionComponent},
-  {path: 'rechercheplats',component : RecherchePlatsComponent},
-  {path: 'resultatsplats',component : ResultatsPlatsComponent},
-  {path: 'generationplanning',component : GenerationPlanningComponent},
-  {path: 'resultatplanning',component : ResultatPlanningComponent},
+  {path: 'nutrition',component : NutritionComponent, canActivate: [AuthGuardService] },
+  {path: 'rechercheplats',component : RecherchePlatsComponent, canActivate: [AuthGuardService] },
+  {path: 'resultatsplats',component : ResultatsPlatsComponent, canActivate: [AuthGuardService] },
+  {path: 'generationplanning',component : GenerationPlanningComponent, canActivate: [AuthGuardService] },
+  {path: 'resultatplanning',component : ResultatPlanningComponent, canActivate: [AuthGuardService] },
   {path: 'forget-password',component : ForgetPasswordComponent},
   {path: 'verify-email',component : VerifyEmailComponent},
-  {path: 'evaluationphysique', component: EvaluationPhysiqueComponent}
+  {path: 'evaluationphysique', component: EvaluationPhysiqueComponent, canActivate: [AuthGuardService] },
+  {path: 'exercice', component : ExerciceFitnessComponent, canActivate: [AuthGuardService] },
+  {path: 'chatbot',component : ChatComponent, canActivate: [AuthGuardService]},
+  {path: 'resultat-psychologique',component : ResultatComponent, canActivate: [AuthGuardService]},
+
 ];
 
 @NgModule({

@@ -1,0 +1,11 @@
+<app-navbar [showButtons]="false"></app-navbar>
+<app-navbar2></app-navbar2>
+
+
+<div class="container">
+<div *ngIf="sentiment" class="result-container">
+    <h1 class="title">Résultat de l'analyse de sentiment</h1>
+    <p class="sentiment-info">Sentiment détecté : {{ sentiment }}</p>
+    <p class="motivation-message">{{ motivationMessage }}</p>
+</div>
+</div>

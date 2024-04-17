@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { user } from '@angular/fire/auth';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './component/login/login.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { RegisterComponent } from './component/register/register.component';
+import { ExerciceFitnessComponent } from './component/exercice-fitness/exercice-fitness.component';
 import { NutritionComponent } from './component/nutrition/nutrition.component';
 import { AuthGuardService } from './shared/auth-guard.service';
 import { RecherchePlatsComponent } from './component/nutrition/recherche-plats/recherche-plats.component';
@@ -13,7 +13,6 @@ import { ResultatPlanningComponent } from './component/nutrition/resultat-planni
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
 import { VerifyEmailComponent } from './component/verify-email/verify-email.component';
 import { EvaluationPhysiqueComponent } from './component/evaluation-physique/evaluation-physique.component';
-import { ExerciceFitnessComponent } from './component/exercice-fitness/exercice-fitness.component';
 import { ChatComponent } from './component/evaluation-psychologique/chat/chat.component';
 import { ResultatComponent } from './component/evaluation-psychologique/resultat/resultat.component';
 

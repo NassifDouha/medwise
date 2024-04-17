@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule,NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -8,6 +8,10 @@ import { connectAuthEmulator, getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
+import { ExerciceFitnessComponent } from './component/exercice-fitness/exercice-fitness.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
 import { VerifyEmailComponent } from './component/verify-email/verify-email.component';
@@ -21,11 +25,6 @@ import { ResultatPlanningComponent } from './component/nutrition/resultat-planni
 import { EvaluationPhysiqueComponent } from './component/evaluation-physique/evaluation-physique.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { Navbar2Component } from './component/navbar2/navbar2.component';
-import { ExerciceFitnessComponent } from './component/exercice-fitness/exercice-fitness.component';
-import { BrowserAnimationsModule,NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSelectModule} from '@angular/material/select';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { ChatComponent } from './component/evaluation-psychologique/chat/chat.component';
 import { ResultatComponent } from './component/evaluation-psychologique/resultat/resultat.component';
 
@@ -35,7 +34,7 @@ import { ResultatComponent } from './component/evaluation-psychologique/resultat
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ForgetPasswordComponent,
+    ExerciceFitnessComponent,
     VerifyEmailComponent,
     NutritionComponent,
     RecherchePlatsComponent,
@@ -54,7 +53,14 @@ import { ResultatComponent } from './component/evaluation-psychologique/resultat
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    MatFormFieldModule, 
+    MatInputModule, 
+    MatSelectModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
     MatRadioModule,
+    
     provideFirebaseApp(() => initializeApp({"projectId":"projet-medwise","appId":"1:336115863686:web:595fdcd9a01759825f8107","storageBucket":"projet-medwise.appspot.com","apiKey":"AIzaSyAUHQ0ekXMwjln-o37LQL8Vl7oxM5VLL5I","authDomain":"projet-medwise.firebaseapp.com","messagingSenderId":"336115863686"})),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

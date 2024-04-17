@@ -99,7 +99,7 @@
   .background {
     width: 70%;
     padding: 40px;
-    height: 688px;
+    height: auto;
     background: linear-gradient(60deg, rgba(45, 45, 45, 0.7), rgba(48, 51, 226, 0.7)), url('https://www.suhailbahwangroup.com/wr-plugins/1001_left_image_content_box/uploads/banner-1607239062.jpg') center no-repeat;
     background-size: cover;
     display: flex;

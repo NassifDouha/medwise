@@ -14,6 +14,8 @@ import { ForgetPasswordComponent } from './component/forget-password/forget-pass
 import { VerifyEmailComponent } from './component/verify-email/verify-email.component';
 import { EvaluationPhysiqueComponent } from './component/evaluation-physique/evaluation-physique.component';
 import { ExerciceFitnessComponent } from './component/exercice-fitness/exercice-fitness.component';
+import { ChatComponent } from './component/evaluation-psychologique/chat/chat.component';
+import { ResultatComponent } from './component/evaluation-psychologique/resultat/resultat.component';
 
 
 const routes: Routes = [
@@ -30,6 +32,9 @@ const routes: Routes = [
   {path: 'verify-email',component : VerifyEmailComponent},
   {path: 'evaluationphysique', component: EvaluationPhysiqueComponent, canActivate: [AuthGuardService] },
   {path: 'exercice', component : ExerciceFitnessComponent, canActivate: [AuthGuardService] },
+  {path: 'chatbot',component : ChatComponent, canActivate: [AuthGuardService]},
+  {path: 'resultat-psychologique',component : ResultatComponent, canActivate: [AuthGuardService]},
+
 ];
 
 @NgModule({

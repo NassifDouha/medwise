@@ -26,6 +26,8 @@ import { BrowserAnimationsModule,NoopAnimationsModule } from '@angular/platform-
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ChatComponent } from './component/evaluation-psychologique/chat/chat.component';
+import { ResultatComponent } from './component/evaluation-psychologique/resultat/resultat.component';
 
 
 @NgModule({
@@ -46,6 +48,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     NavbarComponent,
     Navbar2Component,
     ExerciceFitnessComponent,
+    ChatComponent,
+    ResultatComponent,
   ],
   imports: [
     BrowserModule,
